@@ -30,6 +30,8 @@ class MRUCache(BaseCaching):
         """ putting data into the cache"""
         if key is None or item is None:
             return
+        if key in self.cache_data:
+            del self.cache_data[key]
         self.cache_data.update({key: item})
         if len(self.cache_data) > self.MAX_ITEMS:
             key_to_remove = list(self.cache_data.keys())[-2]
