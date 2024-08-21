@@ -59,7 +59,7 @@ class BaseCaching():
 class LIFOCache(BaseCaching):
     """last in first out algo implemented if cache is full"""
     def __init__(self):
-        """initialize"""
+        """initialize the lifo cahe object"""
         super().__init__()
 
     def put(self, key, item):
