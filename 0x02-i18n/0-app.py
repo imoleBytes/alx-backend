@@ -8,13 +8,13 @@ simply outputs “Welcome to Holberton” as page title (<title>)
 from flask import Flask, render_template
 
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 
-@app.get('/')
+@app.route('/', strict_slashes=False)
 def index():
-    """the index controller, returns the index.html"""
-    return render_template("index.html")
+    """the index controller, handles / route"""
+    return render_template("0-index.html")
 
 
 if __name__ == "__main__":
