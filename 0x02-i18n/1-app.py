@@ -13,7 +13,7 @@ from flask import Flask, render_template
 from flask_babel import Babel
 
 
-class Config:
+class Config(object):
     """ Config for babel"""
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = "en"
@@ -26,7 +26,7 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.get('/')
+@app.get('/', strict_slashes=False)
 def index():
     """the index controller, returns the index.html"""
     return render_template("1-index.html")
