@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Create a get_locale function with the babel.localeselector decorator.
- Use request.accept_languages to determine the best match with our
- supported languages.
+Use the _ or gettext function to parametrize your templates.
+Use the message IDs home_title and home_header.
+Create a babel.cfg file containing
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel
@@ -29,7 +29,7 @@ def get_locale():
 @app.route('/', strict_slashes=False)
 def index() -> str:
     """the index controller, returns the index.html"""
-    return render_template("2-index.html")
+    return render_template("3-index.html")
 
 
 if __name__ == "__main__":
