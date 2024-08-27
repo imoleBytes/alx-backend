@@ -28,6 +28,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> str | None:
+    """ get the user's prefered languagge"""
     return request.accept_languages.best_match(Config.LANGUAGES)
 
 
