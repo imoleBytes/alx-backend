@@ -15,7 +15,7 @@ from flask_babel import Babel
 
 class Config(object):
     """ Config for babel"""
-    LANGUAGES = ['en', 'fr']
+    LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
@@ -27,7 +27,7 @@ babel = Babel(app)
 
 
 @app.get('/', strict_slashes=False)
-def index():
+def index() -> str:
     """the index controller, returns the index.html"""
     return render_template("1-index.html")
 
